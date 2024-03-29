@@ -3,7 +3,7 @@ import 'package:flutter_gemini/flutter_gemini.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  Gemini.init(apiKey: 'AIzaSyCauJcx_MmW-vUpCBWLwanWWAXA9gZZO6I');
+  Gemini.init(apiKey: 'api_key');
   runApp(const MyApp());
 }
 
