@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
+import 'package:provider/provider.dart';
 import 'package:test_gemini/api_key.dart';
 import 'package:test_gemini/presentation/home/home.dart';
+import 'package:test_gemini/state/chats.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +22,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: ChangeNotifierProvider<StreamChatProvider>(
+        create: (context) => StreamChatProvider(),
+        child: const HomeScreen(),
+      ),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_gemini/presentation/widgets/chat_stream.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,13 +10,16 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Home Screen"),
       ),
-      drawer: Drawer(
-        child: Column(
-          children: [
-            Text('Gemini'),
-            const Divider(),
-          ],
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              'assets/background.jpg',
+            ),
+            fit: BoxFit.cover,
+          ),
         ),
+        child: const StreamChatWidget(),
       ),
     );
   }
