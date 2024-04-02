@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class ChatInputBox extends StatelessWidget {
   final TextEditingController? controller;
@@ -18,20 +19,23 @@ class ChatInputBox extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Expanded(
-            child: TextField(
-              controller: controller,
-              minLines: 1,
-              maxLines: 6,
-              cursorColor: Theme.of(context).colorScheme.inversePrimary,
-              textInputAction: TextInputAction.newline,
-              keyboardType: TextInputType.multiline,
-              decoration: const InputDecoration(
-                contentPadding: EdgeInsets.all(10),
-                hintText: '     Message',
-                border: InputBorder.none,
+            child: Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: TextField(
+                controller: controller,
+                minLines: 1,
+                maxLines: 6,
+                cursorColor: Theme.of(context).colorScheme.inversePrimary,
+                textInputAction: TextInputAction.newline,
+                keyboardType: TextInputType.multiline,
+                decoration: const InputDecoration(
+                  contentPadding: EdgeInsets.all(10),
+                  hintText: '  Message',
+                  border: InputBorder.none,
+                ),
+                onTapOutside: (_) =>
+                    FocusManager.instance.primaryFocus?.unfocus(),
               ),
-              onTapOutside: (_) =>
-                  FocusManager.instance.primaryFocus?.unfocus(),
             ),
           ),
           Padding(

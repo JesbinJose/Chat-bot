@@ -11,7 +11,7 @@ class StreamChatProvider extends ChangeNotifier {
   bool get loading => _loading;
   set loading(bool value) {
     _loading = value;
-    notifyListeners(); // Notify listeners when loading state changes
+    notifyListeners(); 
   }
 
   void addChatMessage(String text) {
@@ -38,7 +38,7 @@ class StreamChatProvider extends ChangeNotifier {
               ),
             );
           }
-          notifyListeners(); // Notify listeners when chats or loading state changes
+          notifyListeners(); 
         },
       );
     }
